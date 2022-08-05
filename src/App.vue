@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <v-main>
+      <div class="login-dialog">
+        <login-left></login-left>
+        <login-right ></login-right>
+      </div>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import LoginLeft from "@/components/LoginLeft";
+import LoginRight from "@/components/LoginRight";
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
+    LoginLeft,
+    LoginRight,
+  },
+
+  data: () => ({
+    //
+  }),
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.login-dialog {
+  height: 100%;
+  display: grid;
+  /*grid-template-columns: 455px 1fr;*/
+  grid-template-columns: 25% 75%;
+}
+@media only screen and (max-width: 500px) {
+  .login-dialog {
+    display: flex;
+  }
 }
 </style>
