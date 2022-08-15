@@ -9,7 +9,6 @@
 <script>
 export default {
   name: 'login-left',
-// dsfjhjdk
   data() {
     return {
       text: 'The most beautiful venue for your event at your fingertips'
